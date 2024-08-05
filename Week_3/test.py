@@ -49,7 +49,7 @@ def test(args):
             state, info = env.reset(seed=args.seed)
             total_reward = 0
             for t in range(args.max_timesteps):
-                action, _ = agent.act(state)
+                action, _ = agent.select_action(state)
                 next_state, reward, terminated, truncated, _ = env.step(action)
                 total_reward += reward
 
